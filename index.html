@@ -7,22 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        input:valid {
+        input:required:valid {
             border-color: green;
-        }
-
-        input:invalid {
-            border-color: red;
         }
     </style>
 </head>
 
 <body>
-    <form>
-        <div><input type="text" id="login" placeholder="login" required>*</div>
-        <div><input type="email" id="email" placeholder="email" required>*</div>
-        <div><input type="number" max=100 min=1 placeholder="number"></div>
-        <div><button>OK</button></div>
+    <form novalidate>
+        <div>
+            <input type="text" id="login" placeholder="login" required>*
+        </div>
+        <div>
+            <input type="email" id="email" placeholder="email" required>*
+        </div>
+        <div>
+            <input type="number" max=100 min=1 placeholder="number">
+        </div>
+        <input type="tel" name="phone" placeholder="Телефон">
+        <div><button type="button" onclick=checkAll()>OK</button>
+        </div>
+        <div id="errorsInfo"></div>
     </form>
 
 
