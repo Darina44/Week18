@@ -1,5 +1,5 @@
 let errors = [];
-function checkvalidity(input) {
+function checkValidity(input) {
     let validity = input.validity;
     if (validity.valueMissing) {errors.push('Поле ' + input.placeholder + ' не заполнено'); }
     if (validity.patternMismatch) {errors.push('Неверный формат заполнения'); }
