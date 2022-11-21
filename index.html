@@ -30,7 +30,30 @@
         <div id="errorsInfo"></div>
     </form> -->
 
-
+    <h1>Chat</h1>
+    <div id="chat">
+    </div>
+    <form>
+        <div>
+            <label for="author">Имя *
+                <span id="authorError"></span>
+            </label>
+        </div>
+        <div>
+            <input type="text" name="author" id="author" value="" class=inputs />
+        </div>
+        <div>
+            <label for="comment">Комментарий:
+                <span id="commentError"></span>
+            </label>
+        </div>
+        <div>
+            <textarea name="comment" id="comment" class=inputs></textarea>
+        </div>
+        <div>
+            <input name="button" type="button" id="button" value="Отправить" onclick="checkMessage();" />
+        </div>
+    </form>
 
     <script src="/index.js"></script>
 </body>
