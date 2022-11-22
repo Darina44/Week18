@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник</title>
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/1530/1530720.svg" type="image/svg">
+    <style>
+        input:valid:required {
+            border-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Заполните форму</h1>
+    <form>
+        <div>
+            <label for="name" maxlength="10">Кличка питомца</label>
+            <input type="text" id="name" required />
+        </div>
+        <fieldset>
+            <legend>Имя и контакты владельца</legend>
+            <div>
+                <label for="name1">Имя</label>
+                <input type="text" id="name1" required />
+            </div>
+            <div>
+                <label for="phone">Номер телефона</label>
+                <input type="number" id="phone" required />
+            </div>
+        </fieldset>
+        <div>
+            Порода кошки <br />
+            <option value="1">абиссинская</option>
+            <option value="2">британская</option>
+            <option value="3">мейн-кун</option>
+            <option value="4">персидская</option>
+            </select>
+        </div>
+        <div>
+            Чем питается?<br />
+            <input type="checkbox" />
+            сухой корм<br />
+            <input type="checkbox" />
+            влажный корм<br />
+            <input type="checkbox" />
+            натуральный корм<br />
+        </div>
+        <div>
+            Пол питомца<br />
+            <input type="radio" name="sex" />Самка<br />
+            <input type="radio" name="sex" />Самец
+        </div>
+        <div>
+            Комментарий владельца<br />
+            <textarea rows="8" cols="30" maxlength="200">Комментарий</textarea>/>
+        </div>
+        <div>
+            Приложите фото питомца <br />
+            <input type="file">
+        </div>
+        <div>
+            <button>Сохранить</button>
+        </div>
+    </form>
+</body>
+
+</html>
