@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<br lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-wrapper {
+            width: 40%;
+            min-width: 300px;
+            background-color: antiquewhite;
+            border-radius: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 1%;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 40%;
+            padding: 2%;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 5%;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            outline: none;
+        }
+
+        .country-selector {
+            margin: 5px 0 22px 0;
+        }
+
+        h1 {
+            margin: 5% 0 0 0;
+        }
+
+        .button {
+            margin: 5% 0;
+            padding: 2% 0;
+            background-color: #6fd072;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 98%;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>Регистрация:</h1>
+        <p>Пожалуйста, заполните эту форму, если вы хотите стать членом сообщества</p>
+        <form id="form">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Имя" required></br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Электронная почта" required
+                pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i"></br>
+
+            <label for="psw">Пароль</label>
+            <input type="password" id="psw" name="psw" placeholder="Пароль" required max="16"></br>
+
+            <label for="psw-repeat">Повторите пароль</label>
+            <input type="password" id="psw-repeat" name="psw-repeat" placeholder="Повторите пароль" max=6>
+
+            <div class="country-selector">
+                <select name="country" id="country">
+                    <option>Выберите страну проживания:</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Украина">Украина</option>
+                    <option value="Беларусь">Беларусь</option>
+                </select>
+            </div>
+
+            <input type="checkbox" name="agree" id="agree">
+            <span>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Соглашением о
+                    конфиденциальности</a>.</span>
+            <div id="errorsInfo"></div>
+            <button type="button" id="send" class="button" onclick="checkAll()">Отправить</button>
+        </form>
+    </div>
+
+    <script>
+        let errors = [];
+
+        function checkValidity(input) {
+            let validity = input.validity;
+            if (validity.valueMissing) {
+                errors.push('Поле ' + input.placeholder + ' не заполнено');
+            }
+            if (validity.patternMismatch) {
+                errors.push('Введите email в нужном формате');
+            }
+            if (validity.rangeOverFlow) {
+                let max = getAttributeValue(input, 'max');
+                errors.push('Максимальное значение не может быть больше чем ' + max);
+            }
+        }
+
+        function checkAll() {
+            errors = [];
+            let inputs = document.querySelectorAll("input");
+
+            for (let input of inputs) {
+                checkValidity(input);
+            }
+
+            document.getElementById('errorsInfo').innerHTML = errors.join('. <br>');
+        }
+    </script>
+</body>
+
+</html>
