@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Введите сообщение</h2>
+    <div id="comments-result"></div>
+    <div>
+        <label for="author">Имя
+            <span id="authorError"></span>
+        </label>
+    </div>
+    <div>
+        <input type="text" name="author" id="author" value="" class=inputs />
+    </div>
+    <div>
+        <label for="comment">Комментарий:
+            <span id="commentError"></span>
+        </label>
+    </div>
+    <div class="comments">
+        <textarea name="comment" id="newcomment" cols="30" rows="10"></textarea>
+    </div>
+    <button id="button">
+        отправить
+    </button>
+
+    <script src="/сomments/index.js"></script>
+</body>
+
+</html>
